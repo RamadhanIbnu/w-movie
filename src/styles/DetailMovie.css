@@ -1,0 +1,8 @@
+.container-detail-movie{
+    margin-top: 100px;
+}
+
+.detail-movie{
+    display: flex;
+    justify-content: center;
+}
