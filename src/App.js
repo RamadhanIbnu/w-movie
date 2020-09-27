@@ -7,6 +7,7 @@ import {
  } from "react-router-dom";
 import NowPlaying from "./pages/NowPlaying";
 import MyNavbar from './components/Navbar';
+import DetailMovie from './components/DetailMovie';
 
 
 function App() {
@@ -18,6 +19,9 @@ function App() {
           <Route path="/NowPlaying">
             <NowPlaying/>
           </Route>
+          <Route path="/detailMovie/:id">
+          <DetailMovie/>
+        </Route>
         </Switch>
       </Router>
     </div>
