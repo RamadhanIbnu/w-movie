@@ -6,3 +6,11 @@
     display: flex;
     justify-content: center;
 }
+
+.genre-container{
+    display: flex;
+}
+
+.genre{
+    margin-right: 10px;
+}

@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from "react-redux";
 import { getDataDetailMovie } from "../redux/Action/DetailMovie.action";
-import { Container, Card } from "react-bootstrap";
+import { Container, Card, Spinner } from "react-bootstrap";
 import '../styles/DetailMovie.css'
 
 const DetailMovie = () =>{
@@ -26,7 +26,7 @@ const DetailMovie = () =>{
             <Card.Img variant="top" src={`http://image.tmdb.org/t/p/w185${dataDetailMovie.backdrop_path}`} />
             <Card.Body>
             <Card.Title>{dataDetailMovie.title}</Card.Title>
-              {/* <Card.Title>{dataDetailMovie.genres.map((item, index) => (<div key={index}><p>{item.name}</p></div>))}</Card.Title> */}
+              <Card.Title className="genre-container">{dataDetailMovie.genres !== undefined ? (dataDetailMovie.genres.map ((item, index) => (<div className="genre" key={index}><p>{item.name}</p></div>)))  : (<Spinner animation="border" variant="primary" size="lg"/>) }</Card.Title>
                 <Card.Title>Rating : {dataDetailMovie.vote_average}</Card.Title>
                 <Card.Text>{dataDetailMovie.overview}</Card.Text>
             </Card.Body>
