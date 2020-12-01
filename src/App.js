@@ -1,5 +1,3 @@
-import React from 'react';
-import './App.css';
 import { 
   BrowserRouter as Router,
   Switch,
@@ -7,7 +5,8 @@ import {
  } from "react-router-dom";
 import NowPlaying from "./pages/NowPlaying";
 import MyNavbar from './components/Navbar';
-import DetailMovie from './components/DetailMovie';
+import Home from "./pages/Home";
+// import DetailMovie from './components/DetailMovie';
 
 
 function App() {
@@ -16,11 +15,14 @@ function App() {
       <Router>
         <MyNavbar/>
         <Switch>
-          <Route path="/NowPlaying">
+          <Route exact path="/">
+            <Home/>
+          </Route>
+          <Route path="/nowplaying">
             <NowPlaying/>
           </Route>
-          <Route path="/detailMovie/:id">
-          <DetailMovie/>
+          <Route path="/myfav">
+          {/* <DetailMovie/> */}
         </Route>
         </Switch>
       </Router>

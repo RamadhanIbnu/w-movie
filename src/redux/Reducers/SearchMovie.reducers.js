@@ -1,35 +1,33 @@
-import { GET_DATA_REQUEST, GET_DATA_SUCCESS, GET_DATA_FAILED} from "../Action/NowPlaying.action";
+import { GET_SEARCH_MOVIE_REQUEST, GET_SEARCH_MOVIE_SUCCESS, GET_SEARCH_MOVIE_FAILED } from "../Action/SearchMovie.action";
 
 const initialState = {
     data: [],
-    loading: false,
+    Loading: false,
     error: null,
 }
 
-export const showDataNowPlaying = (state=initialState, action) =>{
+export const showSearchMovie = (state=initialState, action) => {
     switch (action.type) {
-        case GET_DATA_REQUEST:
+        case GET_SEARCH_MOVIE_REQUEST:
             return{
                 ...state,
 
                 loading:true,
             }
-        case GET_DATA_SUCCESS:
+        case GET_SEARCH_MOVIE_SUCCESS:
             return{
                 ...state,
 
                 loading: false,
-                data: action.result
+                data: action.result,
             }
-        case GET_DATA_FAILED:
+        case GET_SEARCH_MOVIE_FAILED:
             return{
-                ...state,
-
                 loading: false,
                 error: action.error
-            }
+            }    
     
         default:
             return state;
     }
-}
+};

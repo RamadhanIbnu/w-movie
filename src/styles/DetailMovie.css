@@ -14,3 +14,7 @@
 .genre{
     margin-right: 10px;
 }
+
+.card-image:hover{
+    cursor: pointer;
+}

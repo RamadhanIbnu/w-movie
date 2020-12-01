@@ -24,6 +24,7 @@ export const getDataFailed = (error) =>{
     }
 }
 
+
 export const getDataNowPlaying = (id) =>{
     
     return (dispatch) => {

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Nav, Navbar} from "react-bootstrap";
 import {LinkContainer} from "react-router-bootstrap";
 
@@ -6,18 +5,21 @@ import {LinkContainer} from "react-router-bootstrap";
 const MyNavbar = () =>{
     return (
       <Navbar fixed="top" collapseOnSelect expand="lg" bg="dark" variant="dark">
-        <Navbar.Brand href="#home">WMovie</Navbar.Brand>
+        <LinkContainer to="/">
+        <Navbar.Brand>MovieTask</Navbar.Brand>
+        </LinkContainer>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
-            <LinkContainer to="/NowPlaying">
-                <Nav.Link>Now Playing</Nav.Link>
+            <LinkContainer to="/">
+                <Nav.Link>Home</Nav.Link>
             </LinkContainer>
-            <Nav.Link href="#"></Nav.Link>
-          </Nav>
-          <Nav>
-            <Nav.Link href="#"></Nav.Link>
-            <Nav.Link eventKey={2} href="#"></Nav.Link>
+            <LinkContainer to="/nowplaying">
+            <Nav.Link>Now Playing</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="/myfav">
+            <Nav.Link>My Favorite</Nav.Link>
+            </LinkContainer>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
